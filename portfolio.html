@@ -74,6 +74,20 @@
             object-position: center;
         }
 
+        .banner-section {
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+        }
+
+        .banner-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
         .fixed-height-image {
             width: 100%;
             height: 600px;
@@ -310,6 +324,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             color: var(--accent-color);
+            margin-top: 0.6rem;
             margin-bottom: 1.2rem;
             font-weight: 600;
         }
@@ -402,8 +417,8 @@
         /* Split Title Style - Absolute Positioning relative to center */
         .hero-title-part {
             position: relative;
-            font-size: clamp(4rem, 14vw, 12rem); 
-            line-height: 0.9;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
             letter-spacing: -0.03em;
             font-style: italic;
             font-weight: 400;
@@ -1316,7 +1331,7 @@
         
         @media (max-width: 1024px) {
             /* Hero text shrinking gently for tablets */
-            .hero-title-part { font-size: clamp(3.5rem, 12vw, 9rem); }
+            .hero-title-part { font-size: clamp(1.8rem, 3.5vw, 3rem); }
             .hero-image-wrapper { height: 50vh; min-height: 350px; }
 
             /* Tablet About Fixes */
@@ -1379,9 +1394,9 @@
             }
             
             .hero-title-part {
-                font-size: clamp(3.5rem, 16vw, 6rem);
-                line-height: 0.9;
-                padding: 0 1rem;
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                line-height: 1.1;
+                padding: 0;
             }
             
             /* Anpassungen Mobile About-Bereich */
@@ -1404,8 +1419,8 @@
         }
 
         @media (max-width: 480px) {
-            .hero-title-part { 
-                font-size: clamp(3rem, 14vw, 4.5rem); 
+            .hero-title-part {
+                font-size: clamp(1.6rem, 6vw, 2rem);
             }
             .close-modal { top: -50px; right: 10px; }
         }
@@ -1444,6 +1459,7 @@
             <!-- Top Content Bar -->
             <div class="hero-top-bar">
                 <div class="hero-info gsap-hero-top">
+                    <h1 class="hero-title-part gsap-hero-title">Emilie Tavel</h1>
                     <div class="hero-subtitle" data-i18n="hero.subtitle">UGC Creator</div>
                     <p class="hero-tagline" data-i18n="hero.tagline">
                         Authentic storytelling & high-performance visual content crafted specifically to elevate your social presence in french, english & spanish markets
@@ -1466,15 +1482,14 @@
                 </div>
             </div>
 
-            <!-- Center Stage -->
-            <div class="hero-center-stage">
-                <div class="hero-lockup">
-                    <h1 class="hero-title-part gsap-hero-title">Emilie Tavel</h1>
-                </div>
-            </div>
 
         </div>
     </section>
+
+    <!-- BANNER -->
+    <div class="banner-section">
+        <img src="Autres/bannière.jpg" alt="Banner">
+    </div>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about section-padding">
