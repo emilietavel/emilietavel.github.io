@@ -81,20 +81,6 @@
             object-position: center;
         }
 
-        .banner-section {
-            width: 100%;
-            max-height: 500px;
-            overflow: hidden;
-        }
-
-        .banner-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
-
         .fixed-height-image {
             width: 100%;
             height: 600px;
@@ -268,6 +254,45 @@
         }
 
         .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* --- Hero Side Image Blocks --- */
+        .hero-with-sides {
+            position: relative;
+            width: 100%;
+        }
+
+        .hero-side-images {
+            position: absolute;
+            top: 0;
+            bottom: 6px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 3px;
+        }
+
+        .hero-side-images.left {
+            left: 0;
+        }
+
+        .hero-side-images.right {
+            right: 0;
+        }
+
+        .hero-side-images .side-img {
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+
+        .hero-side-images .side-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-main-content {
             width: 100%;
         }
 
@@ -1341,6 +1366,7 @@
             /* Hero text shrinking gently for tablets */
             .hero-title-part { font-size: clamp(1.8rem, 3.5vw, 3rem); }
             .hero-image-wrapper { height: 50vh; min-height: 350px; }
+            .hero-side-images { display: none; }
 
             /* Tablet About Fixes */
             .about-grid { gap: 4rem; grid-template-columns: 1fr; }
@@ -1358,6 +1384,8 @@
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
             .mobile-only { display: block !important; }
+
+            .hero-side-images { display: none; }
 
             .nav-links {
                 gap: 1.5rem;
@@ -1462,42 +1490,61 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <div class="container hero-container">
+        <div class="hero-with-sides">
             
-            <!-- Top Content Bar -->
-            <div class="hero-top-bar">
-                <div class="hero-info gsap-hero-top">
-                    <h1 class="hero-title-part gsap-hero-title">Emilie Tavel</h1>
-                    <div class="hero-subtitle" data-i18n="hero.subtitle">UGC Creator</div>
-                    <p class="hero-tagline" data-i18n="hero.tagline">
-                        Authentic storytelling & high-performance visual content crafted specifically to elevate your social presence in french, english & spanish markets
-                    </p>
-                </div>
-                
-                <div class="hero-actions-container gsap-hero-top">
-                    <a href="#videos" class="btn-primary" data-i18n="hero.viewProjects">View Projects</a>
-                    <div class="social-links">
-                        <a href="https://www.tiktok.com/@emilietav" target="_blank" class="social-btn" aria-label="TikTok">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                        <a href="https://wa.me/33783121076" target="_blank" class="social-btn" aria-label="WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="mailto:emilietavel.pro@gmail.com.com" class="social-btn" aria-label="Email">
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
+            <!-- Left Image Block (4 images) -->
+            <div class="hero-side-images left">
+                <div class="side-img"><img src="Vacances/1.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/2.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/3.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/4.png" alt=""></div>
+            </div>
+
+            <!-- Main Hero Content -->
+            <div class="hero-main-content">
+                <div class="container hero-container">
+                    
+                    <!-- Top Content Bar -->
+                    <div class="hero-top-bar">
+                        <div class="hero-info gsap-hero-top">
+                            <h1 class="hero-title-part gsap-hero-title">Emilie Tavel</h1>
+                            <div class="hero-subtitle" data-i18n="hero.subtitle">UGC Creator</div>
+                            <p class="hero-tagline" data-i18n="hero.tagline">
+                                Authentic storytelling & high-performance visual content crafted specifically to elevate your social presence in french, english & spanish markets
+                            </p>
+                        </div>
+                        
+                        <div class="hero-actions-container gsap-hero-top">
+                            <a href="#videos" class="btn-primary" data-i18n="hero.viewProjects">View Projects</a>
+                            <div class="social-links">
+                                <a href="https://www.tiktok.com/@emilietav" target="_blank" class="social-btn" aria-label="TikTok">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                                <a href="https://wa.me/33783121076" target="_blank" class="social-btn" aria-label="WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a href="mailto:emilietavel.pro@gmail.com.com" class="social-btn" aria-label="Email">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
+            <!-- Right Image Block (4 images) -->
+            <div class="hero-side-images right">
+                <div class="side-img"><img src="Vacances/5.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/6.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/7.png" alt=""></div>
+                <div class="side-img"><img src="Vacances/8.png" alt=""></div>
+            </div>
 
         </div>
     </section>
 
-    <!-- BANNER -->
-    <div class="banner-section">
-        <img src="Autres/bannière.png" alt="Banner">
-    </div>
+
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about section-padding">
