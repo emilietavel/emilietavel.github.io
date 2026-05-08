@@ -263,21 +263,18 @@
             position: relative;
             width: 100%;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
         }
 
         .hero-side-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 3px;
-            width: 20vw;
+            width: 22vw;
             flex-shrink: 0;
         }
 
         .hero-side-images .side-img {
             overflow: hidden;
             aspect-ratio: 1/1;
+            width: 100%;
         }
 
         .hero-side-images .side-img img {
@@ -289,6 +286,8 @@
         .hero-main-content {
             flex: 1;
             min-width: 0;
+            display: flex;
+            align-items: center;
         }
 
         /* --- REDESIGNED HERO SECTION --- */
@@ -1444,7 +1443,11 @@
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
-        
+
+        @media (orientation: portrait) {
+            .about-img-container { display: none; }
+        }
+
         @media (max-width: 1024px) {
             /* Hero text shrinking gently for tablets */
             .hero-title-part { font-size: clamp(1.8rem, 3.5vw, 3rem); }
@@ -1575,12 +1578,9 @@
     <section id="home" class="hero">
         <div class="hero-with-sides">
             
-            <!-- Left Image Block (4 images) -->
+            <!-- Left Image Block -->
             <div class="hero-side-images left">
                 <div class="side-img"><img src="Bannière/1.png" alt=""></div>
-                <div class="side-img"><img src="Bannière/2.webp" alt=""></div>
-                <div class="side-img"><img src="Bannière/3.webp" alt=""></div>
-                <div class="side-img"><img src="Bannière/4.webp" alt=""></div>
             </div>
 
             <!-- Main Hero Content -->
@@ -1616,12 +1616,9 @@
                 </div>
             </div>
 
-            <!-- Right Image Block (4 images) -->
+            <!-- Right Image Block -->
             <div class="hero-side-images right">
-                <div class="side-img"><img src="Bannière/5.webp" alt=""></div>
-                <div class="side-img"><img src="Bannière/6.jpeg" alt=""></div>
-                <div class="side-img"><img src="Bannière/7.webp" alt=""></div>
-                <div class="side-img"><img src="Bannière/8.webp" alt=""></div>
+                <div class="side-img"><img src="Bannière/2.png" alt=""></div>
             </div>
 
         </div>
@@ -2024,7 +2021,7 @@
                     </div>
                     <div class="collab-step-number" data-i18n="collab.step2.number">Step 2</div>
                     <h4 data-i18n="collab.step2.title">Stay / Product Experience &amp; Content Creation</h4>
-                    <p data-i18n="collab.step2.description">Je vis l'expérience et crée de manière authentique à travers des séjours et des tests produits et je crée du contenu vidéo et photo qui reflète sincèrement votre univers de marque</p>
+                    <p data-i18n="collab.step2.description">Je vis l'expérience et crée du contenu vidéo et photo de manière authentique à travers des séjours et des tests produits qui reflètent sincèrement votre univers de marque</p>
                 </div>
 
                 <div class="collab-step">
@@ -2390,7 +2387,7 @@
                 "collab.step1.description": "We discuss your needs, brand universe and goals. I then craft a tailored content concept designed for your target audience and platform",
                 "collab.step2.number": "Step 2",
                 "collab.step2.title": "Stay / Product Experience & Content Creation",
-                "collab.step2.description": "I live the experience authentically through stays and product testing, and create video and photo content that genuinely reflects your brand universe",
+                "collab.step2.description": "I live the experience and create video and photo content authentically through stays and product testing that genuinely reflect your brand universe",
                 "collab.step3.number": "Step 3",
                 "collab.step3.title": "Delivery & Distribution",
                 "collab.step3.description": "You receive the final edited files, ready to publish. If you want, I can also publish the content on my channels to maximize reach and engagement",
@@ -2461,7 +2458,7 @@
                 "collab.step1.description": "On \u00e9change sur vos besoins, votre univers de marque et vos objectifs. Je con\u00e7ois ensuite un concept de contenu sur mesure, adapt\u00e9 \u00e0 votre audience et votre plateforme (Instagram, TikTok, ...)",
                 "collab.step2.number": "\u00c9tape 2",
                 "collab.step2.title": "S\u00e9jour / Exp\u00e9rience produit & cr\u00e9ation de contenu",
-                "collab.step2.description": "Je vis l\u2019exp\u00e9rience et cr\u00e9e de mani\u00e8re authentique \u00e0 travers des s\u00e9jours et des tests produits et je cr\u00e9e du contenu vid\u00e9o et photo qui refl\u00e8te sinc\u00e8rement votre univers de marque",
+                "collab.step2.description": "Je vis l\u2019exp\u00e9rience et cr\u00e9e du contenu vid\u00e9o et photo de mani\u00e8re authentique, selon le brief valid\u00e9",
                 "collab.step3.number": "\u00c9tape 3",
                 "collab.step3.title": "Livraison & diffusion",
                 "collab.step3.description": "Vous recevez les fichiers finaux \u00e9dit\u00e9s, pr\u00eats \u00e0 publier. Si vous le souhaitez, je peux aussi publier le contenu sur mes r\u00e9seaux pour maximiser la port\u00e9e et l\u2019engagement",
@@ -2532,7 +2529,7 @@
                 "collab.step1.description": "Hablamos sobre tus necesidades, tu universo de marca y tus objetivos. Luego dise\u00f1o un concepto de contenido a medida, adaptado a tu audiencia y tu plataforma.",
                 "collab.step2.number": "Paso 2",
                 "collab.step2.title": "Estancia / Experiencia de producto y creaci\u00f3n de contenido",
-                "collab.step2.description": "Vivo la experiencia de forma aut\u00e9ntica a trav\u00e9s de estancias y pruebas de producto, y creo contenido de v\u00eddeo y foto que refleja sinceramente tu universo de marca",
+                "collab.step2.description": "Vivo la experiencia y creo contenido de v\u00eddeo y foto de forma aut\u00e9ntica a trav\u00e9s de estancias y pruebas de producto que reflejan sinceramente tu universo de marca",
                 "collab.step3.number": "Paso 3",
                 "collab.step3.title": "Entrega y difusi\u00f3n",
                 "collab.step3.description": "Recibes los archivos finales editados, listos para publicar. Si lo deseas, tambi\u00e9n puedo publicar el contenido en mis redes para maximizar el alcance y el engagement.",
