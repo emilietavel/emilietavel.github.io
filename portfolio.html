@@ -108,6 +108,7 @@
             align-items: center;
             justify-content: center;
             padding: 1.2rem 2.5rem;
+            white-space: nowrap;
             background-color: var(--primary-dark);
             color: var(--surface-color);
             font-family: var(--font-main);
@@ -261,24 +262,17 @@
         .hero-with-sides {
             position: relative;
             width: 100%;
+            display: flex;
+            align-items: flex-start;
         }
 
         .hero-side-images {
-            position: absolute;
-            top: 0;
-            bottom: 6px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: auto auto;
             gap: 3px;
-        }
-
-        .hero-side-images.left {
-            left: 0;
-        }
-
-        .hero-side-images.right {
-            right: 0;
+            width: 20vw;
+            flex-shrink: 0;
         }
 
         .hero-side-images .side-img {
@@ -293,7 +287,8 @@
         }
 
         .hero-main-content {
-            width: 100%;
+            flex: 1;
+            min-width: 0;
         }
 
         /* --- REDESIGNED HERO SECTION --- */
@@ -341,7 +336,7 @@
             justify-content: space-between;
             align-items: center;
             margin: 1rem auto 1rem auto;
-            gap: 0rem;
+            gap: 3rem;
             z-index: 3;
             flex-shrink: 0;
         }
@@ -349,6 +344,8 @@
         .hero-info {
             max-width: 700px;
             text-align: justify;
+            flex: 1;
+            min-width: 0;
         }
 
         .hero-subtitle {
@@ -358,7 +355,7 @@
             letter-spacing: 4px;
             color: var(--accent-color);
             margin-top: 0.6rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.1rem;
             font-weight: 600;
         }
 
@@ -375,6 +372,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+            flex-shrink: 0;
         }
 
         .social-links {
@@ -464,10 +462,11 @@
 
         /* --- ABOUT SECTION --- */
         .about {
-            background-color: var(--surface-color); 
+            background-color: var(--surface-color);
             position: relative;
-            z-index: 10; 
-            padding-bottom: 0 !important; 
+            z-index: 10;
+            padding-top: 3rem !important;
+            padding-bottom: 0 !important;
         }
 
         .about-grid {
@@ -996,7 +995,7 @@
         /* --- Gallery Section --- */
         .gallery {
             background-color: var(--bg-color);
-            padding: 6rem 0;
+            padding: 6rem 0 3rem;
         }
 
         .gallery-header {
@@ -1081,6 +1080,90 @@
             .mosaic-item:nth-child(12) { grid-column: 2; grid-row: 6; }
             .mosaic-item:nth-child(13) { grid-column: 1; grid-row: 7; }
             .mosaic-item:nth-child(14) { grid-column: 2; grid-row: 7; }
+        }
+
+        /* --- Equipment Section --- */
+        .equipment {
+            background-color: var(--bg-color);
+            padding: 2rem 0 3rem;
+        }
+
+        .equipment > .container {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 2rem;
+        }
+
+        .equipment-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-header h3 {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 140px);
+            column-gap: 3.5rem;
+            row-gap: 0.6rem;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .equipment-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+        }
+
+        .equipment-img-wrapper {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .equipment-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .equipment-item:hover .equipment-img-wrapper {
+            transform: translateY(-6px);
+        }
+
+        .equipment-item:hover .equipment-img-wrapper img {
+            filter: drop-shadow(0 12px 20px rgba(181, 122, 138, 0.25));
+        }
+
+        .equipment-name {
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            text-align: center;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .equipment-item:hover .equipment-name {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .equipment-grid { grid-template-columns: repeat(2, 140px); }
         }
 
         /* --- Collaboration Steps Section --- */
@@ -1494,10 +1577,10 @@
             
             <!-- Left Image Block (4 images) -->
             <div class="hero-side-images left">
-                <div class="side-img"><img src="Vacances/1.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/2.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/3.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/4.png" alt=""></div>
+                <div class="side-img"><img src="Bannière/1.png" alt=""></div>
+                <div class="side-img"><img src="Bannière/2.webp" alt=""></div>
+                <div class="side-img"><img src="Bannière/3.webp" alt=""></div>
+                <div class="side-img"><img src="Bannière/4.webp" alt=""></div>
             </div>
 
             <!-- Main Hero Content -->
@@ -1535,10 +1618,10 @@
 
             <!-- Right Image Block (4 images) -->
             <div class="hero-side-images right">
-                <div class="side-img"><img src="Vacances/5.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/6.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/7.png" alt=""></div>
-                <div class="side-img"><img src="Vacances/8.png" alt=""></div>
+                <div class="side-img"><img src="Bannière/5.webp" alt=""></div>
+                <div class="side-img"><img src="Bannière/6.jpeg" alt=""></div>
+                <div class="side-img"><img src="Bannière/7.webp" alt=""></div>
+                <div class="side-img"><img src="Bannière/8.webp" alt=""></div>
             </div>
 
         </div>
@@ -1617,44 +1700,51 @@
             </div>
             
             <div class="project-category">
-                <h4 class="category-title" data-i18n="projects.recentVideos">Recent Videos</h4>
+                <h4 class="category-title" data-i18n="projects.lifestyle">LifeStyle</h4>
                 <div class="projects-grid">
-                    
+
                     <div class="project-card" data-video-src="Videos/lampe.mov">
                         <div class="video-wrapper">
                             <video src="Videos/lampe.mov#t=0.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/2.mov">
                         <div class="video-wrapper">
                             <video src="Videos/2.mov#t=0.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/3.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/3.mp4#t=0.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/4.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/4.mp4#t=10.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
+                </div>
+            </div>
+
+            <div class="project-category">
+                <h4 class="category-title" data-i18n="projects.experiences">Experiences</h4>
+                <div class="projects-grid">
+
                     <div class="project-card" data-video-src="Videos/5.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/5.mp4#t=0.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/6.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/6.mp4#t=0.5" playsinline preload="metadata" muted></video>
@@ -1668,7 +1758,7 @@
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/8.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/8.mp4#t=0.5" playsinline preload="metadata" muted></video>
@@ -1676,14 +1766,21 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <div class="project-category">
+                <h4 class="category-title" data-i18n="projects.sports">Sport</h4>
+                <div class="projects-grid">
+
                     <div class="project-card" data-video-src="Videos/9.mov">
                         <div class="video-wrapper">
                             <video src="Videos/9.mov#t=0.8" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
-                    <div class="project-card" data-video-src="Videos/6.mp4">
+
+                    <div class="project-card" data-video-src="Videos/10.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/10.mp4#t=0.5" playsinline preload="metadata" muted></video>
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
@@ -1696,7 +1793,7 @@
                             <div class="play-indicator"><i class="fa-solid fa-play"></i></div>
                         </div>
                     </div>
-                    
+
                     <div class="project-card" data-video-src="Videos/11.mp4">
                         <div class="video-wrapper">
                             <video src="Videos/11.mp4#t=2" playsinline preload="metadata" muted></video>
@@ -1864,6 +1961,41 @@
                 <div class="mosaic-item"><img src="Vacances/13.png" alt="Gallery"></div>
                 <!-- Landscape col 4 bas -->
                 <div class="mosaic-item"><img src="Vacances/14.png" alt="Gallery"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT SECTION -->
+    <section class="equipment">
+        <div class="container">
+            <div class="equipment-header">
+                <h3 data-i18n="equipment.title">Mon Matériel</h3>
+            </div>
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-img-wrapper">
+                        <img src="Matériel/Camera.png" alt="Camera">
+                    </div>
+                    <span class="equipment-name">DJI Osmo Pocket 3</span>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-img-wrapper">
+                        <img src="Matériel/Drone.png" alt="Drone">
+                    </div>
+                    <span class="equipment-name">DJI Mini 3 Pro</span>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-img-wrapper">
+                        <img src="Matériel/Iphone.png" alt="iPhone">
+                    </div>
+                    <span class="equipment-name">iPhone 15</span>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-img-wrapper">
+                        <img src="Matériel/micro.jpg" alt="Microphone">
+                    </div>
+                    <span class="equipment-name">DJI Mic 2</span>
+                </div>
             </div>
         </div>
     </section>
@@ -2204,7 +2336,7 @@
                 "nav.gallery": "Gallery",
                 "nav.collaboration": "Collaboration",
                 "nav.contact": "Contact",
-                "hero.subtitle": "UGC Creator specialized in authentic content creation for brands",
+                "hero.subtitle": "UGC Creator",
                 "hero.tagline": "Authentic storytelling & high-performance visual content crafted specifically to elevate your social presence in french, english & spanish markets",
                 "hero.viewProjects": "View Projects",
                 "about.title": "About Me",
@@ -2225,6 +2357,10 @@
                 "projects.selectedWorks": "Selected Works",
                 "projects.clickVideo": "Click any video to watch in full screen with sound",
                 "projects.recentVideos": "Recent Videos",
+                "projects.lifestyle": "LifeStyle",
+                "projects.experiences": "Experiences",
+                "projects.sports": "Sport",
+                "equipment.title": "My Equipment",
                 "races.myRaces": "My<br>Races",
                 "races.introText": "Running is at the heart of both my life and my content. Every race is a story worth telling \u2014 from the first training session to the finish line. I will document each milestone with the same authenticity I bring to every brand collaboration.",
                 "races.montmartre10K": "Montmartre 10K",
@@ -2271,7 +2407,7 @@
                 "nav.gallery": "Galerie",
                 "nav.collaboration": "Collaboration",
                 "nav.contact": "Contact",
-                "hero.subtitle": "Cr\u00e9atrice UGC spécialisée dans la création de contenu authentique pour les marques",
+                "hero.subtitle": "Cr\u00e9atrice UGC",
                 "hero.tagline": "Storytelling authentique & contenu visuel performant, con\u00e7u pour renforcer votre pr\u00e9sence sur les r\u00e9seaux en fran\u00e7ais, anglais & espagnol",
                 "hero.viewProjects": "Voir les projets",
                 "about.title": "\u00c0 propos",
@@ -2292,6 +2428,10 @@
                 "projects.selectedWorks": "Projets s\u00e9lectionn\u00e9s",
                 "projects.clickVideo": "Cliquez sur une vid\u00e9o pour la regarder en plein \u00e9cran avec le son",
                 "projects.recentVideos": "Vid\u00e9os r\u00e9centes",
+                "projects.lifestyle": "LifeStyle",
+                "projects.experiences": "Exp\u00e9riences",
+                "projects.sports": "Sport",
+                "equipment.title": "Mon Mat\u00e9riel",
                 "races.myRaces": "Mes<br>Courses",
                 "races.introText": "La course \u00e0 pied est au c\u0153ur de ma vie et de mon contenu. Chaque course est une histoire qui m\u00e9rite d\u2019\u00eatre racont\u00e9e \u2014 du premier entra\u00eenement jusqu\u2019\u00e0 la ligne d\u2019arriv\u00e9e. Je documente chaque \u00e9tape avec la m\u00eame authenticit\u00e9 que j\u2019apporte \u00e0 chaque collaboration.",
                 "races.montmartre10K": "10 km de Montmartre",
@@ -2338,7 +2478,7 @@
                 "nav.gallery": "Galer\u00eda",
                 "nav.collaboration": "Colaboraci\u00f3n",
                 "nav.contact": "Contacto",
-                "hero.subtitle": "Creadora UGC especializada en la creación de contenido auténtico para marcas",
+                "hero.subtitle": "Creadora UGC",
                 "hero.tagline": "Storytelling aut\u00e9ntico y contenido visual de alto rendimiento, dise\u00f1ado para potenciar tu presencia en redes en franc\u00e9s, ingl\u00e9s y espa\u00f1ol",
                 "hero.viewProjects": "Ver proyectos",
                 "about.title": "Sobre m\u00ed",
@@ -2359,6 +2499,10 @@
                 "projects.selectedWorks": "Proyectos seleccionados",
                 "projects.clickVideo": "Haz clic en un v\u00eddeo para verlo en pantalla completa con sonido",
                 "projects.recentVideos": "V\u00eddeos recientes",
+                "projects.lifestyle": "LifeStyle",
+                "projects.experiences": "Experiencias",
+                "projects.sports": "Deporte",
+                "equipment.title": "Mi Equipo",
                 "races.myRaces": "Mis<br>Carreras",
                 "races.introText": "Correr est\u00e1 en el coraz\u00f3n de mi vida y de mi contenido. Cada carrera es una historia que merece ser contada \u2014 desde el primer entrenamiento hasta la l\u00ednea de meta. Documento cada etapa con la misma autenticidad que aporto a cada colaboraci\u00f3n.",
                 "races.montmartre10K": "10 km de Montmartre",
